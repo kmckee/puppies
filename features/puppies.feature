@@ -36,7 +36,6 @@ Feature: Puppies
     And I click the place order button
     Then I should see "Thank you for adopting a puppy!"
 
-    @wip
   Scenario: Thanks for adopting message with a table
     When I click the view details button for Hanna
     And I click the adopt me button
@@ -60,3 +59,7 @@ Feature: Puppies
     And I checkout with a Purchase order 
     Then I should see "Thank you for adopting a puppy!"
 
+    @wip
+  Scenario: Thanks for adopting message the right way(tm)
+    When I adopt a puppy
+    Then I should see "Thank you for adopting a puppy!" 

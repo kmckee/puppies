@@ -41,3 +41,5 @@ end
 When(/^I leave the (.*) field blank$/) do |field|
   on(CheckoutPage).send("#{field}=", '')
 end
+
+

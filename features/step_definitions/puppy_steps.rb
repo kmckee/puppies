@@ -42,4 +42,14 @@ When(/^I leave the (.*) field blank$/) do |field|
   on(CheckoutPage).send("#{field}=", '')
 end
 
+When(/^I checkout with:$/) do |checkout_detail|
+  on(CheckoutPage).check_out checkout_detail.hashes.first
+end
 
+When(/^I checkout$/) do
+  on(CheckoutPage).check_out
+end
+
+When(/^I checkout with a Purchase order$/) do
+  on(CheckoutPage).check_out 'pay_type' => 'Purchase order'
+end

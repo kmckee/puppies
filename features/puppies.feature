@@ -36,6 +36,7 @@ Feature: Puppies
     And I click the place order button
     Then I should see "Thank you for adopting a puppy!"
 
+    @wip
   Scenario: Thanks for adopting message with a table
     When I click the view details button for Hanna
     And I click the adopt me button

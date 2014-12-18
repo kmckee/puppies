@@ -6,5 +6,10 @@ Cucumber::Rake::Task.new(:features) do |t|
   t.profile = 'default'
 end
 
+Cucumber::Rake::Task.new(:wip) do |t|
+  t.profile = 'wip'
+end
+
 task :default => :features
+task :cucumber => :features
 task :cucumber => :features

@@ -2,8 +2,8 @@ Given(/^I am shopping for puppies$/) do
   visit(HomePage)
 end
 
-When(/^I click the first view details button$/) do
-  on(HomePage).view_details
+When(/^I click the view details button for (.*)$/) do |name|
+  on(HomePage).view_details_for(name)
 end
 
 When(/^I click the adopt me button$/) do
@@ -12,9 +12,6 @@ end
 
 When(/^I click the complete the adoption button$/) do
   on(CartPage).complete_adoption
-end
-
-When(/^I leave the name field blank$/) do
 end
 
 When(/^I enter "(.*?)" in the address field$/) do |address|
@@ -34,5 +31,13 @@ When(/^I click the place order button$/) do
 end
 
 Then(/^I should see "(.*?)"$/) do |expected|
-  on(CheckoutPage).text.should include expected
+  @current_page.text.should include expected
+end
+
+When(/^I enter "(.*?)" in the name field$/) do |name|
+  on(CheckoutPage).name= name
+end
+
+When(/^I leave the (.*) field blank$/) do |field|
+  on(CheckoutPage).send("#{field}=", '')
 end

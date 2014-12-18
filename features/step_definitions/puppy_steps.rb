@@ -30,9 +30,9 @@ When(/^I select "(.*?)" in the pay type field$/) do |pay_type|
 end
 
 When(/^I click the place order button$/) do
-  pending # express the regexp above with the code you wish you had
+  on(CheckoutPage).place_order
 end
 
-Then(/^I should see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see "(.*?)"$/) do |expected|
+  on(CheckoutPage).text.should include expected
 end
